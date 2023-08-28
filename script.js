@@ -5,6 +5,11 @@ function getComputerChoice(){
     let options = ["rock", "paper", "scissors"];
     return options[Math.floor(Math.random()*3)];
 }
-let x = getComputerChoice()
-console.log(x)
+let computerChoice = getComputerChoice()
+console.log(computerChoice)
 
+var playerChoice = prompt("Choose rock, paper, or scissor");
+
+function playRound(playerSelection, computerSelection){
+    
+}
