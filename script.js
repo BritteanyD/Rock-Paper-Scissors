@@ -8,8 +8,17 @@ function getComputerChoice(){
 let computerChoice = getComputerChoice()
 console.log(computerChoice)
 
-var playerChoice = prompt("Choose rock, paper, or scissor");
+var playerChoice = prompt("Choose rock, paper, or scissors");
+console.log(playerChoice)
 
-function playRound(playerSelection, computerSelection){
+
+
+if (playerChoice === computerChoice){
+    alert("It's a tie!")   
+    } 
+
+
+
+function playRound(playerChoice, computerChoice){
     
 }
