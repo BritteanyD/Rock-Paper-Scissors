@@ -29,7 +29,6 @@ function playRound(playerChoice, computerChoice) {
         return ("You win! Scissors beats paper")
 }
 alert(playRound(playerChoice, computerChoice))
-console.log(playRound(playerChoice, computerChoice));
 
 let playerScore = 0;
 let computerScore = 0;
@@ -38,13 +37,10 @@ console.log("computerScore", computerScore)
 
 function game() {
     const computerChoice1 = getComputerChoice();
-    console.log("computerChoice1", computerChoice1)
     const playerChoice1 = prompt("Round 1: Choose rock, paper, or scissors")
         .toString()
         .toLowerCase();
-    console.log("playerChoice1", playerChoice1);
     const result1 = playRound(playerChoice1, computerChoice1)
-    console.log(result1)
     alert(result1);
 
     if (result1.includes("win")) {
@@ -56,13 +52,10 @@ function game() {
     console.log("computerScore", computerScore)
 
     const computerChoice2 = getComputerChoice();
-    console.log("computerChoice2", computerChoice2)
     const playerChoice2 = prompt("Round 2: Choose rock, paper, or scissors")
         .toString()
         .toLowerCase();
-    console.log("playerChoice2", playerChoice2);
     const result2 = playRound(playerChoice2, computerChoice2)
-    console.log(result2)
     alert(result2);
 
     if (result2.includes("win")) {
@@ -74,13 +67,10 @@ function game() {
     console.log("computerScore", computerScore)
 
     const computerChoice3 = getComputerChoice();
-    console.log("computerChoice3", computerChoice3)
     const playerChoice3 = prompt("Round 3: Choose rock, paper, or scissors")
         .toString()
         .toLowerCase();
-    console.log("playerChoice3", playerChoice3);
     const result3 = playRound(playerChoice3, computerChoice3)
-    console.log(result3)
     alert(result3);
 
     if (result3.includes("win")) {
@@ -93,13 +83,10 @@ function game() {
     console.log("computerScore", computerScore)
 
     const computerChoice4 = getComputerChoice();
-    console.log("computerChoice4", computerChoice4)
     const playerChoice4 = prompt("Round 4: Choose rock, paper, or scissors")
         .toString()
         .toLowerCase();
-    console.log("playerChoice4", playerChoice4);
     const result4 = playRound(playerChoice4, computerChoice4)
-    console.log(result4)
     alert(result4);
 
     if (result4.includes("win")) {
@@ -112,13 +99,10 @@ function game() {
     console.log("computerScore", computerScore)
 
     const computerChoice5 = getComputerChoice();
-    console.log("computerChoice5", computerChoice5)
     const playerChoice5 = prompt("Round 5: Choose rock, paper, or scissors")
         .toString()
         .toLowerCase();
-    console.log("playerChoice5", playerChoice5);
     const result5 = playRound(playerChoice5, computerChoice5)
-    console.log(result5)
     alert(result5);
 
     if (result5.includes("win")) {
