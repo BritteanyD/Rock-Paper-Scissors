@@ -1,16 +1,9 @@
-
 console.log("Welcome to Britteany's Rock Paper Scissors Game!");
-alert("Practice Round!")
 
 function getComputerChoice() {
     let options = ["rock", "paper", "scissors"];
     return options[Math.floor(Math.random() * 3)];
 }
-const computerChoice = getComputerChoice();
-
-const playerChoice = prompt("Choose rock, paper, or scissors")
-    .toString()
-    .toLowerCase();
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice)
@@ -28,12 +21,9 @@ function playRound(playerChoice, computerChoice) {
     else if (playerChoice === 'scissors' && computerChoice === 'paper')
         return ("You win! Scissors beats paper")
 }
-alert(playRound(playerChoice, computerChoice))
 
 let playerScore = 0;
 let computerScore = 0;
-console.log("playerScore", playerScore)
-console.log("computerScore", computerScore)
 
 function game() {
     const computerChoice1 = getComputerChoice();
