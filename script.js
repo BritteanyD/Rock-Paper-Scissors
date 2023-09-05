@@ -1,4 +1,4 @@
-console.log("Welcome to Britteany's Rock Paper Scissors Game!");
+alert("Welcome to Britteany's Rock Paper Scissors Game!");
 
 function getComputerChoice() {
     let options = ["rock", "paper", "scissors"];
