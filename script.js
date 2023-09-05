@@ -7,13 +7,10 @@ function getComputerChoice() {
     return options[Math.floor(Math.random() * 3)];
 }
 const computerChoice = getComputerChoice();
-console.log("computerChoice", computerChoice)
 
 const playerChoice = prompt("Choose rock, paper, or scissors")
     .toString()
     .toLowerCase();
-
-console.log("playerChoice", playerChoice);
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice)
