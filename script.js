@@ -118,4 +118,17 @@ function game() {
         alert("Tie!")
     }
 }
-game()
+
+function onButtonClick() {
+    alert('Button clicked!');
+  }
+
+const rock = document.getElementById('rockButton');
+const paper = document.getElementById('paperButton');
+const scissors = document.getElementById('scissorsButton');
+
+console.log(rock, paper, scissors)
+
+rock.addEventListener('click', onButtonClick);
+paper.addEventListener('click', onButtonClick);
+scissors.addEventListener('click', onButtonClick);
