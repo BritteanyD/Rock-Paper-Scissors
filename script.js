@@ -6,6 +6,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerChoice) {
+    debugger
     if (playerChoice === computerChoice)
         return ("It's a tie!")
     else if (playerChoice === 'rock' && computerChoice === 'paper')
@@ -122,8 +123,11 @@ function game() {
 let playerChoice = document.querySelectorAll('button');
 playerChoice.forEach((button) => {
 
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         alert(button.id);
+
+        const result = playRound(button.id, getComputerChoice())
+        alert(result);
     })
-   
+
 });
