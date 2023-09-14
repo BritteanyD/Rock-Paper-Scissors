@@ -119,16 +119,11 @@ function game() {
     }
 }
 
-function onButtonClick() {
-    alert('Button clicked!');
-  }
+let playerChoice = document.querySelectorAll('button');
+playerChoice.forEach((button) => {
 
-const rock = document.getElementById('rockButton');
-const paper = document.getElementById('paperButton');
-const scissors = document.getElementById('scissorsButton');
-
-console.log(rock, paper, scissors)
-
-rock.addEventListener('click', onButtonClick);
-paper.addEventListener('click', onButtonClick);
-scissors.addEventListener('click', onButtonClick);
+    button.addEventListener('click', function() {
+        alert(button.id);
+    })
+   
+});
