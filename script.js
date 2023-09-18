@@ -133,7 +133,6 @@ function game() {
     }
 }
 /**TO DO
- * Display game winner
  * Make it pretty
  * (Replace everything with winner message and refresh page to play again)
  */
@@ -153,7 +152,24 @@ playerChoice.forEach((button) => {
         const computerPoint = document.querySelector('#computerPoint');
         computerPoint.textContent = computerScore;
 
+        const playerWins = document.querySelector('#playerWins');
+
+        const computerWins = document.querySelector('#computerWins');
+
+        const tie = document.querySelector('#tie');
+
         if (roundsPlayed === maxRounds) {
+
+            if (playerScore > computerScore) {
+                playerWins.textContent = 'You won the game!';
+            }
+            else if (playerScore < computerScore) {
+                computerWins.textContent = 'You lost the game';
+            }
+            else {
+                tie.textContent ="It's a tie!";
+            };
+
             const gameOver = document.querySelector('#gameOver');
             gameOver.textContent = 'Game Over!'
 
