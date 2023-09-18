@@ -6,20 +6,33 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerChoice) {
-    if (playerChoice === computerChoice)
+    if (playerChoice === computerChoice) {
         return ("It's a tie!")
-    else if (playerChoice === 'rock' && computerChoice === 'paper')
-        return ("Paper beats rock, you lose")
-    else if (playerChoice === 'scissors' && computerChoice === 'rock')
+    }
+    else if (playerChoice === 'rock' && computerChoice === 'paper') {
+        computerScore++
+        return("Paper beats rock, you lose");
+    }
+    else if (playerChoice === 'scissors' && computerChoice === 'rock') {
+        computerScore++
         return ("Rock beats scissors, you lose")
-    else if (playerChoice === 'paper' && computerChoice === 'scissors')
+    }
+    else if (playerChoice === 'paper' && computerChoice === 'scissors') {
+        computerScore++
         return ("Scissors beat paper, you lose")
-    else if (playerChoice === 'paper' && computerChoice === 'rock')
+    }
+    else if (playerChoice === 'paper' && computerChoice === 'rock') {
+        playerScore++
         return ("You win! Paper beats rock")
-    else if (playerChoice === 'rock' && computerChoice === 'scissors')
+    }
+    else if (playerChoice === 'rock' && computerChoice === 'scissors') {
+        playerScore++
         return ("You win! Rock beats scissors")
-    else if (playerChoice === 'scissors' && computerChoice === 'paper')
+    }
+    else if (playerChoice === 'scissors' && computerChoice === 'paper') {
+        playerScore++
         return ("You win! Scissors beats paper")
+    }
 }
 
 let playerScore = 0;
@@ -126,12 +139,15 @@ playerChoice.forEach((button) => {
         const display = document.querySelector('#display');
         //display.textContent = result;
 
-
-
         const result = playRound(button.id, getComputerChoice())
         //alert(result);
         display.textContent = result;
-        
+
+        const runningScore = document.querySelector('#runningScore');
+        console.log(runningScore);
+        console.log('playerScore',playerScore);
+        console.log('computerScore', computerScore);
+
     })
 
 });
