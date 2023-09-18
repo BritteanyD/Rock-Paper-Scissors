@@ -11,7 +11,7 @@ function playRound(playerChoice, computerChoice) {
     }
     else if (playerChoice === 'rock' && computerChoice === 'paper') {
         computerScore++
-        return("Paper beats rock, you lose");
+        return ("Paper beats rock, you lose");
     }
     else if (playerChoice === 'scissors' && computerChoice === 'rock') {
         computerScore++
@@ -37,7 +37,8 @@ function playRound(playerChoice, computerChoice) {
 
 let playerScore = 0;
 let computerScore = 0;
-
+let roundsPlayed = 0;
+let maxRounds = 5;
 function game() {
     const computerChoice1 = getComputerChoice();
     const playerChoice1 = prompt("Round 1: Choose rock, paper, or scissors")
@@ -131,30 +132,38 @@ function game() {
         alert("Tie!")
     }
 }
-
+/**TO DO
+ * Display game winner
+ * Make it pretty
+ * (Replace everything with winner message and refresh page to play again)
+ */
 let playerChoice = document.querySelectorAll('button');
 playerChoice.forEach((button) => {
 
     button.addEventListener('click', function () {
         const display = document.querySelector('#display');
-        //display.textContent = result;
 
         const result = playRound(button.id, getComputerChoice())
-        //alert(result);
+        roundsPlayed++
         display.textContent = result;
 
-        const runningScore = document.querySelector('#runningScore');
-        console.log(runningScore);
-        console.log('playerScore',playerScore);
-        console.log('computerScore', computerScore);
+        const playerPoint = document.querySelector('#playerPoint');
+        playerPoint.textContent = playerScore;
+
+        const computerPoint = document.querySelector('#computerPoint');
+        computerPoint.textContent = computerScore;
+
+        if (roundsPlayed === maxRounds) {
+            const gameOver = document.querySelector('#gameOver');
+            gameOver.textContent = 'Game Over!'
+
+            playerChoice.forEach(button => {
+                button.disabled = true
+            });
+        }
+
+
+
 
     })
-
 });
-
-//const container = document.querySelector('#container');
-//const content = document.createElement('div');
-//content.classList.add('content');
-//content.textContent = 'This is the glorious text-content!';
-
-//container.appendChild(content);
