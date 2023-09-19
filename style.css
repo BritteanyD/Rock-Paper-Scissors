@@ -1,0 +1,50 @@
+html {
+    background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);
+}
+
+.gameContainer {
+    text-align: center;
+    justify-content: center;
+    margin: 100px;
+}
+
+#gameOver, #playerWins, #computerWins, #tie {
+    font-size: 70px;
+}
+
+#playerWins {
+    color:green;
+}
+
+#computerWins {
+    color: red;
+}
+
+.scoreDisplay {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px;
+    letter-spacing: .1em;
+    text-shadow: 
+      0 -1px 0 #e6cfcf, 
+      0 1px 0 #633333, 
+      0 2px 0 #2c2c2c, 
+      0 3px 0 #2a2a2a, 
+      0 4px 0 #282828,   
+      0 15px 30px rgba(130, 14, 14, 0.9);
+}
+
+button {
+    background-color: #9f0808;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;
+    cursor:pointer;
+}
+
+button:disabled {
+    background-color: #b95d5d; 
+}

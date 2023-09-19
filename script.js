@@ -1,121 +1,87 @@
-alert("Welcome to Britteany's Rock Paper Scissors Game!");
-
 function getComputerChoice() {
     let options = ["rock", "paper", "scissors"];
     return options[Math.floor(Math.random() * 3)];
 }
 
 function playRound(playerChoice, computerChoice) {
-    if (playerChoice === computerChoice)
+    if (playerChoice === computerChoice) {
         return ("It's a tie!")
-    else if (playerChoice === 'rock' && computerChoice === 'paper')
-        return ("Paper beats rock, you lose")
-    else if (playerChoice === 'scissors' && computerChoice === 'rock')
+    }
+    else if (playerChoice === 'rock' && computerChoice === 'paper') {
+        computerScore++
+        return ("Paper beats rock, you lose");
+    }
+    else if (playerChoice === 'scissors' && computerChoice === 'rock') {
+        computerScore++
         return ("Rock beats scissors, you lose")
-    else if (playerChoice === 'paper' && computerChoice === 'scissors')
+    }
+    else if (playerChoice === 'paper' && computerChoice === 'scissors') {
+        computerScore++
         return ("Scissors beat paper, you lose")
-    else if (playerChoice === 'paper' && computerChoice === 'rock')
+    }
+    else if (playerChoice === 'paper' && computerChoice === 'rock') {
+        playerScore++
         return ("You win! Paper beats rock")
-    else if (playerChoice === 'rock' && computerChoice === 'scissors')
+    }
+    else if (playerChoice === 'rock' && computerChoice === 'scissors') {
+        playerScore++
         return ("You win! Rock beats scissors")
-    else if (playerChoice === 'scissors' && computerChoice === 'paper')
+    }
+    else if (playerChoice === 'scissors' && computerChoice === 'paper') {
+        playerScore++
         return ("You win! Scissors beats paper")
+    }
 }
 
 let playerScore = 0;
 let computerScore = 0;
+let roundsPlayed = 0;
+let maxRounds = 5;
 
-function game() {
-    const computerChoice1 = getComputerChoice();
-    const playerChoice1 = prompt("Round 1: Choose rock, paper, or scissors")
-        .toString()
-        .toLowerCase();
-    const result1 = playRound(playerChoice1, computerChoice1)
-    alert(result1);
+let playerChoice = document.querySelectorAll('button');
+playerChoice.forEach((button) => {
 
-    if (result1.includes("win")) {
-        playerScore++;
-    } else if (result1.includes("lose")) {
-        computerScore++;
-    }
-    console.log("playerScore", playerScore)
-    console.log("computerScore", computerScore)
+    button.addEventListener('click', function () {
+        const display = document.querySelector('#display');
 
-    const computerChoice2 = getComputerChoice();
-    const playerChoice2 = prompt("Round 2: Choose rock, paper, or scissors")
-        .toString()
-        .toLowerCase();
-    const result2 = playRound(playerChoice2, computerChoice2)
-    alert(result2);
+        const result = playRound(button.id, getComputerChoice())
+        roundsPlayed++
+        display.textContent = result;
 
-    if (result2.includes("win")) {
-        playerScore++;
-    } else if (result2.includes("lose")) {
-        computerScore++;
-    }
-    console.log("playerScore", playerScore)
-    console.log("computerScore", computerScore)
+        const playerPoint = document.querySelector('#playerPoint');
+        playerPoint.textContent = playerScore;
 
-    const computerChoice3 = getComputerChoice();
-    const playerChoice3 = prompt("Round 3: Choose rock, paper, or scissors")
-        .toString()
-        .toLowerCase();
-    const result3 = playRound(playerChoice3, computerChoice3)
-    alert(result3);
+        const computerPoint = document.querySelector('#computerPoint');
+        computerPoint.textContent = computerScore;
 
-    if (result3.includes("win")) {
-        playerScore++;
-    }
-    else if (result3.includes("lose")) {
-        computerScore++;
-    }
-    console.log("playerScore", playerScore)
-    console.log("computerScore", computerScore)
+        const playerWins = document.querySelector('#playerWins');
 
-    const computerChoice4 = getComputerChoice();
-    const playerChoice4 = prompt("Round 4: Choose rock, paper, or scissors")
-        .toString()
-        .toLowerCase();
-    const result4 = playRound(playerChoice4, computerChoice4)
-    alert(result4);
+        const computerWins = document.querySelector('#computerWins');
 
-    if (result4.includes("win")) {
-        playerScore++;
-    }
-    else if (result4.includes("lose")) {
-        computerScore++;
-    }
-    console.log("playerScore", playerScore)
-    console.log("computerScore", computerScore)
+        const tie = document.querySelector('#tie');
 
-    const computerChoice5 = getComputerChoice();
-    const playerChoice5 = prompt("Round 5: Choose rock, paper, or scissors")
-        .toString()
-        .toLowerCase();
-    const result5 = playRound(playerChoice5, computerChoice5)
-    alert(result5);
+        if (roundsPlayed === maxRounds) {
 
-    if (result5.includes("win")) {
-        playerScore++;
-    }
-    else if (result5.includes("lose")) {
-        computerScore++;
-    }
-    console.log("playerScore", playerScore)
-    console.log("computerScore", computerScore)
+            if (playerScore > computerScore) {
+                playerWins.textContent = 'You Won The Game!';
+            }
+            else if (playerScore < computerScore) {
+                computerWins.textContent = 'You Lost The Game';
+            }
+            else {
+                tie.textContent = "It's a tie!";
+            };
+
+            const gameOver = document.querySelector('#gameOver');
+            gameOver.textContent = 'Game Over! Refresh Page to Play Again'
+
+            playerChoice.forEach(button => {
+                button.disabled = true
+            });
+        }
 
 
-    if (playerScore > computerScore) {
-        console.log("You won the game!")
-        alert("You won the game!");
-    }
-    else if (playerScore < computerScore) {
-        console.log("You lost the game")
-        alert("You lost the game");
-    }
-    else {
-        console.log("Tie!")
-        alert("Tie!")
-    }
-}
-game()
+
+
+    })
+});
