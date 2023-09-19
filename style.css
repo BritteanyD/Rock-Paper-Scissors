@@ -1,0 +1,9 @@
+html {
+    background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);
+}
+
+
+.gameContainer {
+    text-align: center;
+    margin: 20px;
+}

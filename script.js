@@ -133,7 +133,6 @@ function game() {
     }
 }
 /**TO DO
- * Make it pretty
  * (Replace everything with winner message and refresh page to play again)
  */
 let playerChoice = document.querySelectorAll('button');
