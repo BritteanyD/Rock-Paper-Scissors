@@ -8,8 +8,16 @@ html {
     margin: 100px;
 }
 
-#gameOver, #playerWins, #computerWins {
+#gameOver, #playerWins, #computerWins, #tie {
     font-size: 70px;
+}
+
+#playerWins {
+    color:green;
+}
+
+#computerWins {
+    color: red;
 }
 
 .scoreDisplay {
@@ -37,6 +45,6 @@ button {
     cursor:pointer;
 }
 
-button:hover {
+button:disabled {
     background-color: #b95d5d; 
 }
